@@ -1,0 +1,23 @@
+
+spring:
+  profiles:
+    active:
+      - dev
+
+---
+
+server:
+  port: 8001
+spring:
+  application:
+    name: PLAT-SERVICE
+  profiles: dev
+
+---
+
+server:
+  port: 8012
+spring:
+  application:
+    name: PLAT-SERVICE
+  profiles: test
