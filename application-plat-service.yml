@@ -1,0 +1,30 @@
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev
+  application:
+    name: employee-provider
+server:
+  port: 8001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka  #告诉服务提供者要把服务注册到哪儿 #单机环境
+  instance:
+    prefer-ip-address: true #显示客户端真实ip
+
+---
+spring:
+  profiles: test
+  application:
+    name: employee-provider-test
+server:
+  port: 8002
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka  #告诉服务提供者要把服务注册到哪儿 #单机环境
+  instance:
+prefer-ip-address: true #显示客户端真实ip
