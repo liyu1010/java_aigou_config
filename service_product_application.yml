@@ -19,7 +19,7 @@ eureka:
       defaultZone: http://localhost:7001/eureka/
 mybatis-plus:
   mapper-locations: classpath:itsource/aigou/mapper/*Mapper.xml
-  type-aliases-package: itsource.aigou.domain
+  type-aliases-package: itsource.aigou.domain,itsource.aigou.query
 ---
 server:
   port: 8003
@@ -38,4 +38,4 @@ eureka:
       defaultZone: http://localhost:7001/eureka/
 mybatis-plus:
   mapper-locations: classpath:itsource/aigou/mapper/*Mapper.xml
-  type-aliases-package: itsource.aigou.domain
+  type-aliases-package: itsource.aigou.domain,itsource.aigou.query
