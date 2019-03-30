@@ -1,0 +1,41 @@
+spring:
+  profiles:
+    active: dev
+---
+server:
+  port: 8002
+spring:
+  application:
+    name: PRODUCT-SERVICE
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/aigou
+      username: root
+      password: 123456
+  profiles: dev
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+mybatis-plus:
+  mapper-locations: classpath:itsource/aigou/mapper/*Mapper.xml
+  type-aliases-package: itsource.aigou.domain
+---
+server:
+  port: 8003
+spring:
+  application:
+    name: PRODUCT-SERVICE-TEST
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/aigou_test
+      username: root
+      password: 123456
+  profiles: test
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+mybatis-plus:
+  mapper-locations: classpath:itsource/aigou/mapper/*Mapper.xml
+  type-aliases-package: itsource.aigou.domain
